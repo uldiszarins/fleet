@@ -5,7 +5,7 @@
     
     <table class="table">
         <tr>
-            <td>Automašīnas</td>
+            <td>Atskaites</td>
         </tr>
     </table>
        
