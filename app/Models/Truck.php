@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-
 class Truck extends Model
 {
     use HasFactory;
@@ -14,10 +13,11 @@ class Truck extends Model
 
     protected $fillable = [
         'id',
-        'b_kods',
-        'b_nos',
-        'b_no',
-        'b_lidz'
+        'truck_type',
+        'truck_number',
+        'truck_make',
+        'truck_type',
+        'truck_model'
     ];
 
     public function setBNoAttribute($value)
@@ -31,29 +31,16 @@ class Truck extends Model
     }
 
     public const VALIDATION_RULES = [
-        'b_nos' => [
+        'truck_number' => [
             'required',
             'min:3',
-            'max:45'
+            'max:10'
         ],
-        'b_kods' => [
+        'truck_make' => [
             'required',
             'min:2',
-            'max:15'
+            'max:100'
         ],
-        'b_no' => [
-            'required',
-            'date'
-        ],
-        'b_lidz' => [
-            'date',
-            'after:b_no'
-        ]
     ];
 
-    public function getActivitylogOptions(): LogOptions
-    {
-        return LogOptions::defaults()
-            ->logOnly(['*']);
-    }
 }

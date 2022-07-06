@@ -6,6 +6,7 @@ use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\TruckRequest;
 use App\Models\Truck;
+use App\Lib\Variables;
 
 class TruckController extends Controller
 {
@@ -14,7 +15,8 @@ class TruckController extends Controller
         $trucks = Truck::all();
 
         return view('trucks', [
-            'trucks' => $trucks
+            'trucks' => $trucks,
+            'truckTypes' => Variables::TRUCK_TYPES,
         ]);
     }
 
@@ -39,24 +41,27 @@ class TruckController extends Controller
         return view('trucksEdit', [
             'truckId' => $truckId,
             'truck' => Truck::findOrFail($truckId),
+            'truckTypes' => Variables::TRUCK_TYPES,
         ]);
     }
 
-    public function update(BankRequest $request, $bankId): RedirectResponse
+    public function update(TruckRequest $request, $truckId): RedirectResponse
     {
         $validated = $request->validated();
 
-        $banka = Bank::findOrFail($bankId);
+        $truck = Truck::findOrFail($truckId);
 
-        $banka->update($request->except('_token'));
+        $truck->update($request->except('_token'));
+
+        //dd($truck);
 
         return redirect()
-            ->route('banks.show', ['bank' => $bankId])
+            ->route('trucks.show', ['truck' => $truckId])
             ->with('status', 'Dati izlaboti');
     }
 
     public function create(): View
     {
-        return view('classifiers::ClassifiersBanksCreate');
+        return view('trucksCreate');
     }
 }

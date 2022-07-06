@@ -16,7 +16,7 @@
         <div class="col text-right">
             <div class="btn-group">
                
-                <a class="btn btn-primary" href="">
+                <a class="btn btn-primary" href="{{ route('trucks.create') }}">
                     Pievienot
                 </a>
                 

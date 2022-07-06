@@ -350,6 +350,21 @@ return [
                 ],
             ],
         ],
+        'JqueryUI' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => '/css/jquery-ui.css'
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => '/css/jquery-ui.theme.min.css'
+                ]
+            ]
+        ],
     ],
 
     /*
