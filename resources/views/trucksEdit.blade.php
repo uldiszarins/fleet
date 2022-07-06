@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Klasifikatori - Izmaksu grupas')
+@section('title', 'Tehnika - '.$truck->truck_number)
 
 @section('content_header')
 <div class="container-fluid">

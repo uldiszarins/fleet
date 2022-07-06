@@ -18,6 +18,9 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
         // $schedule->job(new Heartbeat)->everyMinute();
+        $schedule->command('backup:run', ['--only-db'])
+            ->dailyAt('04:00')
+            ->runInBackground();
     }
 
     /**
