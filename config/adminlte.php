@@ -239,9 +239,14 @@ return [
             'icon'        => 'far fa-fw fa-file',
         ],
         [
+            'text'        => 'Darbinieki',
+            'url'         => 'users',
+            'icon'        => 'far fa-fw fa-user',
+        ],
+        [
             'text' => 'Pārskats',
             'url'  => 'reports',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-fw fa-file-contract',
         ],
     ],
 

@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Tehnika')
+@section('title', 'Darbinieki')
 
 @section('content_header')
 <div class="container-fluid">
@@ -9,7 +9,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb" style="background-color:transparent !Important;">
                     <li class="breadcrumb-item"><a href="#"><i class="fas fa-fw fa-home"></i></a></li>
-                    <li class="breadcrumb-item"><a href="#">Tehnika</a></li>
+                    <li class="breadcrumb-item"><a href="#">Darbinieki</a></li>
                 </ol>
             </nav>
         </div>
@@ -30,25 +30,15 @@
 <div class="container-fluid">
     <div class="card">
         <div class="card-body">
-            <table class="table table-bordered table-striped table-hover" id="trucksTable">
+            <table class="table table-bordered" id="trucksTable">
                 <thead>
                     <tr>
-                        <th></th><th>Numurs</th><th>Tips</th><th>Ražotājs/Modelis</th>
+                        <th></th><th>Numurs</th><th>Tips</th><th>Ražotājs</th><th>Modelis</th>
                         <th>Gads</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($trucks as $truck)
-                    <tr>
-                        <td>{{ $truck->id }}</td>
-                        <td>
-                            <a href="{{ route('trucks.show', ['truck' => $truck->id]) }}">{{ $truck->truck_number }}</a>
-                        </td>
-                        <td>{{ $truckTypes[$truck->truck_type] }}</td>
-                        <td>{{ $truck->truck_make }} {{ $truck->truck_model }}</td>
-                        <td>{{ $truck->truck_year }}</td>
-                    </tr>
-                    @endforeach
+                    
                 </tbody>
             </table>
         </div>

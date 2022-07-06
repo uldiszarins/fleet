@@ -23,9 +23,17 @@ return new class extends Migration
             $table->string('truck_model', 100);
             $table->year('truck_year');
             $table->string('truck_vin_number', 100);
-            $table->date('truck_technical_inspection');
-            $table->date('truck_insurance');
-            $table->date('truck_cc_insurance');
+            $table->date('truck_technical_inspection_date');
+            $table->date('truck_vignette_date');
+            $table->string('truck_vignette_number', 100);
+            $table->date('truck_insurance_date');
+            $table->string('truck_insurance_number', 100);
+            $table->date('truck_cc_insurance_date');
+            $table->string('truck_cc_insurance_number', 100);
+            $table->date('truck_transportation_date');
+            $table->string('truck_transportation_number', 100);
+            $table->date('truck_waste_date');
+            $table->string('truck_waste_number', 100);
         });
     }
 

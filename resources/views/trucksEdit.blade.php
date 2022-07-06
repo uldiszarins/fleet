@@ -52,68 +52,102 @@
                 <input type="hidden" name="_method" value="PUT">
                 <div class="card">
                     <div class="card-body">
-                            <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-2 col-form-label">Veids</label>
-                                <div class="col-sm-10">
-                                    <select class="form-control" name="truck_type">
-                                        @foreach($truckTypes as $key => $truckType)
-                                        <option value="{{ $key }}">{{ $truckType }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-2 col-form-label">Veids</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" name="truck_type">
+                                    @foreach($truckTypes as $key => $truckType)
+                                    <option @if($key == $truck->truck_type) selected @endif value="{{ $key }}">{{ $truckType }}</option>
+                                    @endforeach
+                                </select>
                             </div>
-                            <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-2 col-form-label">Numurs</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" value="{{ $truck->truck_number }}"
-                                        name="truck_number" required>
-                                        <div id="coeff_to_feedback" class="invalid-feedback"></div>
-                                </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-2 col-form-label">Numurs</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="{{ $truck->truck_number }}"
+                                    name="truck_number" required>
+                                    <div id="coeff_to_feedback" class="invalid-feedback"></div>
                             </div>
-                            <div class="form-group row">
-                                <label for="inputPassword" class="col-sm-2 col-form-label">Marka</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" value="{{ $truck->truck_make }}"
-                                        name="truck_make" required>
-                                </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">Marka</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="{{ $truck->truck_make }}"
+                                    name="truck_make" required>
                             </div>
-                            <div class="form-group row">
-                                <label for="inputPassword" class="col-sm-2 col-form-label">Modelis</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" value="{{ $truck->truck_model }}">
-                                </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">Modelis</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="{{ $truck->truck_model }}">
                             </div>
-                            <div class="form-group row">
-                                <label for="inputPassword" class="col-sm-2 col-form-label">Gads</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" value="{{ $truck->truck_year }}">
-                                </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">Gads</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="{{ $truck->truck_year }}">
                             </div>
-                            <div class="form-group row">
-                                <label for="inputPassword" class="col-sm-2 col-form-label">Vin numurs</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" value="{{ $truck->truck_vin_number }}">
-                                </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">Vin numurs</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="{{ $truck->truck_vin_number }}">
                             </div>
-                            <div class="form-group row">
-                                <label for="inputPassword" class="col-sm-2 col-form-label">Skate</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" value="{{ $truck->truck_technical_inspection }}">
-                                </div>
+                        </div>
+                        <h4>Atgādinājumi</h4>
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">Skate</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" value="{{ $truck->truck_technical_inspection }}">
                             </div>
-                            <div class="form-group row">
-                                <label for="inputPassword" class="col-sm-2 col-form-label">Octa</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" value="{{ $truck->truck_insurance }}">
-                                </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">Vinjete</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" value="{{ $truck->truck_technical_inspection }}">
                             </div>
-                            <div class="form-group row">
-                                <label for="inputPassword" class="col-sm-2 col-form-label">Kasko</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control datepicker" value="{{ $truck->truck_cc_insurance }}">
-                                </div>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" value="{{ $truck->truck_insurance }}">
                             </div>
-                        
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">Octa</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" value="{{ $truck->truck_insurance }}">
+                            </div>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" value="{{ $truck->truck_insurance }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">Kasko</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control datepicker" value="{{ $truck->truck_cc_insurance }}">
+                            </div>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" value="{{ $truck->truck_insurance }}">
+                            </div>
+                        </div>
+                        <h4>Atļaujas</h4>
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">Pašpārvadājumu</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" value="{{ $truck->truck_technical_inspection }}">
+                            </div>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" value="{{ $truck->truck_technical_inspection }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">Atkritumu</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" value="{{ $truck->truck_technical_inspection }}">
+                            </div>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" value="{{ $truck->truck_technical_inspection }}">
+                            </div>
+                        </div>
                     </div>
                     <div class="card-footer text-right"">
                         <a class="btn btn-secondary" href="{{ route('trucks.index') }}">Atpakaļ</a>
