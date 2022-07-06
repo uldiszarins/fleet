@@ -1,10 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TruckController;
 
-Route::get('/trucks', function () {
-    return view('trucks');
-});
+Route::resource('/trucks', TruckController::class);
 
 Route::get('/reports', function () {
     return view('reports');
