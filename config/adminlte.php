@@ -227,21 +227,20 @@ return [
     'menu' => [
         // Navbar items:
         [
-            'type'         => 'navbar-search',
-            'text'         => 'search',
+            'type' => 'navbar-search',
+            'text' => 'search',
             'topnav_right' => true,
         ],
         // Sidebar items:
-
         [
-            'text'        => 'Tehnika',
-            'url'         => 'trucks',
-            'icon'        => 'far fa-fw fa-file',
+            'text' => 'Tehnika',
+            'url' => 'trucks',
+            'icon' => 'fas fa-fw fa-truck',
         ],
         [
-            'text'        => 'Darbinieki',
-            'url'         => 'users',
-            'icon'        => 'far fa-fw fa-user',
+            'text' => 'Darbinieki',
+            'url' => 'employees',
+            'icon' => 'far fa-fw fa-user',
         ],
         [
             'text' => 'Pārskats',

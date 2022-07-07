@@ -21,10 +21,10 @@ return new class extends Migration
             $table->string('empl_surname', 100);
             $table->string('empl_phone', 100);
             $table->string('empl_address', 100);
-            $table->date('empl_driver_license_date');
-            $table->date('empl_health_date');
-            $table->date('empl_insurance_date');
-            $table->date('empl_work_safety_date');
+            $table->date('empl_driver_license_date')->default('0000-00-00');;
+            $table->date('empl_health_date')->default('0000-00-00');;
+            $table->date('empl_insurance_date')->default('0000-00-00');;
+            $table->date('empl_work_safety_date')->default('0000-00-00');;
         });
     }
 

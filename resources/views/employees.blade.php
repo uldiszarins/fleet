@@ -16,7 +16,7 @@
         <div class="col text-right">
             <div class="btn-group">
                
-                <a class="btn btn-primary" href="{{ route('trucks.create') }}">
+                <a class="btn btn-primary" href="{{ route('employees.create') }}">
                     Pievienot
                 </a>
                 
@@ -33,12 +33,20 @@
             <table class="table table-bordered" id="trucksTable">
                 <thead>
                     <tr>
-                        <th></th><th>Numurs</th><th>Tips</th><th>Ražotājs</th><th>Modelis</th>
-                        <th>Gads</th>
+                        <th></th><th>Vārds, uzvārds</th><th>Telefons</th><th>Adrese</th>
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    @foreach($employees as $employee)
+                    <tr>
+                        <td>{{ $employee->id }}</td>
+                        <td>
+                            <a href="{{ route("employees.show", ['employee' => $employee->id]) }}">
+                                {{ $employee->empl_name . ' ' . $employee->empl_surname }}</a></td>
+                        <td>{{ $employee->empl_phone }}</td>
+                        <td>{{ $employee->empl_address }}</td>
+                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

@@ -97,66 +97,6 @@
                         <input type="text" name="truck_vin_number" class="form-control" maxlength="100">
                     </div>
                 </div>
-                <h4>Atgādinājumi</h4>
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Skate</label>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control datepicker" name="truck_technical_inspection_date">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Vinjete</label>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control datepicker" name="truck_vignette_date"
-                        >
-                    </div>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control" name="truck_vignette_number" 
-                            v maxlength="100">
-                        <div id="truck_vignette_number_feedback" class="invalid-feedback"></div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Octa</label>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control datepicker" name="truck_insurance_date">
-                    </div>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control" name="truck_insurance_number" maxlength="100"
-                            >
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Kasko</label>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control datepicker" name="truck_cc_insurance_date">
-                    </div>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control" name="truck_cc_insurance_number" maxlength="100"
-                            >
-                    </div>
-                </div>
-                <h4>Atļaujas</h4>
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Pašpārvadājumu</label>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control datepicker" name="truck_transportation_date">
-                    </div>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control" name="truck_transportation_number" 
-                            maxlength="100" >
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Atkritumu</label>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control datepicker" name="truck_waste_date">
-                    </div>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control" name="truck_waste_number" maxlength="100"
-                           >
-                    </div>
-                </div>
             </div>
             <div class="card-footer text-right"">
                 <a class="btn btn-secondary" href="{{ route('trucks.index') }}">Atpakaļ</a>

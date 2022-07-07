@@ -32,7 +32,6 @@ class TruckController extends Controller
         $truck->truck_model = $request->truck_model;
         $truck->truck_year = $request->truck_year;
         $truck->truck_vin_number = $request->truck_vin_number;
-        $truck->truck_technical_inspection_date = $request->truck_technical_inspection_date;
 
         $truck->save();
 

@@ -24,7 +24,18 @@
 <div class="container-fluid">
     <div class="card">
         <div class="card-body">
-           
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>       
 </div>
