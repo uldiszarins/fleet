@@ -30,7 +30,7 @@
 <div class="container-fluid">
     <div class="card">
         <div class="card-body">
-            <table class="table table-bordered" id="trucksTable">
+            <table class="table table-bordered table-striped table-hover" id="employeesTable">
                 <thead>
                     <tr>
                         <th></th><th>Vārds, uzvārds</th><th>Telefons</th><th>Adrese</th>
@@ -61,7 +61,7 @@
     <script>
         $(document).ready(function() {
 
-            $('#trucksTable').DataTable({
+            $('#employeesTable').DataTable({
                 dom: '<"row"<"col"B><"col"f>><"tabula"rt><"row"<"col"i><"col"l><"col"p>>',
                 buttons: [{
                         extend: 'copy',

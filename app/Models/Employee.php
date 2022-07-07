@@ -33,6 +33,20 @@ class Employee extends Model
             'min:3',
             'max:100',
         ],
+        'empl_surname' => [
+            'required',
+            'string',
+            'min:3',
+            'max:100',
+        ],
+        'empl_phone' => [
+            'string',
+            'max:8',
+        ],
+        'empl_address' => [
+            'string',
+            'max:100',
+        ],
     ];
 
     public function getActivitylogOptions(): LogOptions
@@ -41,17 +55,29 @@ class Employee extends Model
             ->logOnly(['*']);
     }
 
-    public function getTruckTechnicalInspectionDateAttribute()
+    public function getEmplDriverLicenseDateAttribute()
     {
-        return ($this->attributes['truck_technical_inspection_date'] != '0000-00-00' ?
-            $this->attributes['truck_technical_inspection_date']
+        return ($this->attributes['empl_driver_license_date'] != '0000-00-00' ?
+            $this->attributes['empl_driver_license_date']
             : '');
     }
 
-    public function getTruckWasteDateAttribute()
+    public function getEmplHealthDateAttribute()
     {
-        return ($this->attributes['truck_waste_date'] != '0000-00-00' ?
-            $this->attributes['truck_waste_date']
+        return ($this->attributes['empl_health_date'] != '0000-00-00' ?
+            $this->attributes['empl_health_date']
+            : '');
+    }
+    public function getEmplInsuranceDateAttribute()
+    {
+        return ($this->attributes['empl_insurance_date'] != '0000-00-00' ?
+            $this->attributes['empl_insurance_date']
+            : '');
+    }
+    public function getEmplWorkSafetyDateAttribute()
+    {
+        return ($this->attributes['empl_work_safety_date'] != '0000-00-00' ?
+            $this->attributes['empl_work_safety_date']
             : '');
     }
 

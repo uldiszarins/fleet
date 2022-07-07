@@ -52,32 +52,32 @@
         <div class="card">
             <div class="card-body">
                 <div class="form-group row">
-                    <label for="staticEmail" class="col-sm-2 col-form-label">Vārds</label>
-                    <div class="col-sm-10">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">Vārds</label>
+                    <div class="col-sm-9">
                         <input type="text" class="form-control validate-input" 
                             name="empl_name" required minlength="3" maxlength="100">
                         <div id="empl_name_feedback" class="invalid-feedback"></div>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="staticEmail" class="col-sm-2 col-form-label">Uzvārds</label>
-                    <div class="col-sm-10">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">Uzvārds</label>
+                    <div class="col-sm-9">
                         <input type="text" class="form-control validate-input" 
                             name="empl_surname" required minlength="3" maxlength="100">
                         <div id="empl_surname_feedback" class="invalid-feedback"></div>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="staticEmail" class="col-sm-2 col-form-label">Telefons</label>
-                    <div class="col-sm-10">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">Telefons</label>
+                    <div class="col-sm-9">
                         <input type="text" class="form-control validate-input"
                             name="empl_phone" required maxlength="8">
                         <div id="empl_phone_feedback" class="invalid-feedback"></div>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="staticEmail" class="col-sm-2 col-form-label">Adrese</label>
-                    <div class="col-sm-10">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">Adrese</label>
+                    <div class="col-sm-9">
                         <input type="text" class="form-control validate-input"
                             name="empl_address" required maxlength="100">
                         <div id="empl_address_feedback" class="invalid-feedback"></div>
@@ -96,39 +96,4 @@
 @section('js')
     <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
-
-    <script>
-        $(document).ready(function() {
-
-            $('#trucksTable').DataTable({
-                dom: '<"row"<"col"B><"col"f>><"tabula"rt><"row"<"col"i><"col"l><"col"p>>',
-                buttons: [{
-                        extend: 'copy',
-                        className: 'btn btn-primary'
-                    },
-                    {
-                        extend: 'excelHtml5',
-                        className: 'btn btn-primary'
-                    },
-                    {
-                        extend: 'pdfHtml5',
-                        className: 'btn btn-primary',
-                        orientation: 'Landscape',
-                        customize: function(doc) {
-                            doc.content[1].table.widths =
-                                Array(doc.content[1].table.body[0].length + 1).join('*').split('');
-                            doc.pageMargins = [20, 20, 20, 20];
-                        }
-                    },
-                ],
-                language: {
-                    url: '//cdn.datatables.net/plug-ins/1.11.5/i18n/lv.json'
-                },
-                "lengthChange": true,
-                lengthMenu: [10, 20, 50, 100],
-            });
-            
-
-        });
-    </script>
 @stop
