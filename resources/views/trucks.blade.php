@@ -33,7 +33,7 @@
             <table class="table table-bordered table-striped table-hover" id="trucksTable">
                 <thead>
                     <tr>
-                        <th></th><th>Numurs</th><th>Tips</th><th>Ražotājs/Modelis</th>
+                        <th></th><th>Numurs</th><th>Tips</th><th>Ražotājs</th><th>Modelis</th>
                         <th>Gads</th>
                     </tr>
                 </thead>
@@ -45,7 +45,8 @@
                             <a href="{{ route('trucks.show', ['truck' => $truck->id]) }}">{{ $truck->truck_number }}</a>
                         </td>
                         <td>{{ $truckTypes[$truck->truck_type] }}</td>
-                        <td>{{ $truck->truck_make }} {{ $truck->truck_model }}</td>
+                        <td>{{ $truck->truck_make }}</td>
+                        <td>{{ $truck->truck_model }}</td>
                         <td>{{ $truck->truck_year }}</td>
                     </tr>
                     @endforeach
@@ -88,7 +89,7 @@
                     url: '//cdn.datatables.net/plug-ins/1.11.5/i18n/lv.json'
                 },
                 "lengthChange": true,
-                lengthMenu: [10, 20, 50, 100],
+                lengthMenu: [15, 30, 50, 100],
             });
             
 

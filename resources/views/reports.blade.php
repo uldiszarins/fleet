@@ -39,7 +39,7 @@
                     <table class="table table-bordered table-striped">
                         <tbody>
                             @foreach($skates as $skate)
-                            <tr>
+                            <tr @if($skate->over_date == 1) class="table-danger" @endif>
                                 <td><a href="{{ route("trucks.show", ['truck' => $skate->id]) }}">{{ $skate->truck_number }}</a></td>
                                 <td>{{ $skate->truck_technical_inspection_date }}</td>
                             </tr>
@@ -58,7 +58,7 @@
                     <table class="table table-bordered table-striped">
                         <tbody>
                             @foreach($vinjetes as $vinjete)
-                            <tr>
+                            <tr @if($vinjete->over_date == 1) class="table-danger" @endif>
                                 <td>
                                     <a href="{{ route("trucks.show", ['truck' => $vinjete->id]) }}">
                                         {{ $vinjete->truck_number }}</a>
@@ -81,7 +81,7 @@
                     <table class="table table-bordered table-striped">
                         <tbody>
                             @foreach($insurances as $insurance)
-                            <tr>
+                            <tr @if($insurance->over_date == 1) class="table-danger" @endif>
                                 <td>
                                     <a href="{{ route("trucks.show", ['truck' => $insurance->id]) }}">
                                         {{ $insurance->truck_number }}</a>
@@ -104,7 +104,7 @@
                     <table class="table table-bordered table-striped">
                         <tbody>
                             @foreach($ccInsurances as $ccInsurance)
-                            <tr>
+                            <tr @if($ccInsurance->over_date == 1) class="table-danger" @endif>
                                 <td>
                                     <a href="{{ route("trucks.show", ['truck' => $ccInsurance->id]) }}">
                                         {{ $ccInsurance->truck_number }}</a>
@@ -130,7 +130,7 @@
                     <table class="table table-bordered table-striped">
                         <tbody>
                             @foreach($transportations as $transportation)
-                            <tr>
+                            <tr @if($transportation->over_date == 1) class="table-danger" @endif>
                                 <td>
                                     <a href="{{ route("trucks.show", ['truck' => $transportation->id]) }}">
                                         {{ $transportation->truck_number }}</a>
@@ -153,7 +153,7 @@
                     <table class="table table-bordered table-striped">
                         <tbody>
                             @foreach($waste as $w)
-                            <tr>
+                            <tr @if($w->over_date == 1) class="table-danger" @endif>
                                 <td>
                                     <a href="{{ route("trucks.show", ['truck' => $w->id]) }}">
                                         {{ $w->truck_number }}</a>
@@ -184,7 +184,7 @@
                     <table class="table table-bordered table-striped">
                         <tbody>
                             @foreach($driverLicenses as $driverLicense)
-                            <tr>
+                            <tr @if($driverLicense->over_date == 1) class="table-danger" @endif>
                                 <td>
                                     <a href="{{ route("employees.show", ['employee' => $driverLicense->id]) }}">
                                         {{ $driverLicense->empl_name }} {{ $driverLicense->empl_surname }}</a>
@@ -197,7 +197,78 @@
                 </div>
             </div>    
         </div>
+        <div class="col-sm-3">  
+            <div class="card">
+                <div class="card-header">
+                    <h5>Medicīnas izziņa</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered table-striped">
+                        <tbody>
+                            @foreach($healths as $health)
+                            <tr @if($health->over_date == 1) class="table-danger" @endif>
+                                <td>
+                                    <a href="{{ route("employees.show", ['employee' => $health->id]) }}">
+                                        {{ $health->empl_name }} {{ $health->empl_surname }}</a>
+                                </td>
+                                <td>{{ $health->empl_health_date }}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>    
+        </div>
+        <div class="col-sm-3">  
+            <div class="card">
+                <div class="card-header">
+                    <h5>Apdrošināšana</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered table-striped">
+                        <tbody>
+                            @foreach($emplInsurances as $emplInsurance)
+                            <tr @if($emplInsurance->over_date == 1) class="table-danger" @endif>
+                                <td>
+                                    <a href="{{ route("employees.show", ['employee' => $emplInsurance->id]) }}">
+                                        {{ $emplInsurance->empl_name }} {{ $emplInsurance->empl_surname }}</a>
+                                </td>
+                                <td>{{ $emplInsurance->empl_insurance_date }}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>    
+        </div>
+        <div class="col-sm-3">  
+            <div class="card">
+                <div class="card-header">
+                    <h5>Darba drošība</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered table-striped">
+                        <tbody>
+                            @foreach($workSafeties as $workSafety)
+                            <tr @if($workSafety->over_date == 1) class="table-danger" @endif>
+                                <td>
+                                    <a href="{{ route("employees.show", ['employee' => $workSafety->id]) }}">
+                                        {{ $workSafety->empl_name }} {{ $workSafety->empl_surname }}</a>
+                                </td>
+                                <td>{{ $workSafety->empl_work_safety_date }}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>    
+        </div>
     </div>
 </div>
 <br />
 @endsection
+
+@section('js')
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
+@stop
