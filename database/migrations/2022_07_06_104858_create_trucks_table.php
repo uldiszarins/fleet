@@ -22,18 +22,18 @@ return new class extends Migration
             $table->string('truck_make', 100);
             $table->string('truck_model', 100);
             $table->year('truck_year');
-            $table->string('truck_vin_number', 100);
-            $table->date('truck_technical_inspection_date');
-            $table->date('truck_vignette_date');
-            $table->string('truck_vignette_number', 100);
-            $table->date('truck_insurance_date');
-            $table->string('truck_insurance_number', 100);
-            $table->date('truck_cc_insurance_date');
-            $table->string('truck_cc_insurance_number', 100);
-            $table->date('truck_transportation_date');
-            $table->string('truck_transportation_number', 100);
-            $table->date('truck_waste_date');
-            $table->string('truck_waste_number', 100);
+            $table->string('truck_vin_number', 100)->default('');
+            $table->date('truck_technical_inspection_date')->default('0000-00-00');
+            $table->date('truck_vignette_date')->default('0000-00-00');
+            $table->string('truck_vignette_number', 100)->default('');
+            $table->date('truck_insurance_date')->default('0000-00-00');
+            $table->string('truck_insurance_number', 100)->default('');
+            $table->date('truck_cc_insurance_date')->default('0000-00-00');
+            $table->string('truck_cc_insurance_number', 100)->default('');
+            $table->date('truck_transportation_date')->default('0000-00-00');
+            $table->string('truck_transportation_number', 100)->default('');
+            $table->date('truck_waste_date')->default('0000-00-00');
+            $table->string('truck_waste_number', 100)->default('');
         });
     }
 

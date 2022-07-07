@@ -2,15 +2,18 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TruckController;
-use App\Http\Controllers\UserController;
 
-Route::resource('/trucks', TruckController::class);
-Route::resource('/users', UserController::class);
+Route::resource('/trucks', TruckController::class)
+    ->middleware('auth');
 
 Route::get('/reports', function () {
     return view('reports');
+})->middleware('auth');;
+
+Route::get('/', function() {
+    return redirect('/trucks');
 });
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

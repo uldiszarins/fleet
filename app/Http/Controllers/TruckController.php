@@ -24,16 +24,19 @@ class TruckController extends Controller
     {
         $request->validated();
 
-        $bank = new Bank();
+        $truck = new Truck();
 
-        $bank->b_nos = $request->b_nos;
-        $bank->b_kods = $request->b_kods;
-        $bank->b_no = $request->b_no;
-        $bank->b_lidz = $request->b_lidz;
+        $truck->truck_type = $request->truck_type;
+        $truck->truck_number = $request->truck_number;
+        $truck->truck_make = $request->truck_make;
+        $truck->truck_model = $request->truck_model;
+        $truck->truck_year = $request->truck_year;
+        $truck->truck_vin_number = $request->truck_vin_number;
+        $truck->truck_technical_inspection_date = $request->truck_technical_inspection_date;
 
-        $bank->save();
+        $truck->save();
 
-        return redirect()->route('banks.index')->with('status', 'Dati pievienoti!');
+        return redirect()->route('trucks.index')->with('status', 'Dati pievienoti!');
     }
 
     public function show(int $truckId): View
@@ -62,6 +65,8 @@ class TruckController extends Controller
 
     public function create(): View
     {
-        return view('trucksCreate');
+        return view('trucksCreate', [
+            'truckTypes' => Variables::TRUCK_TYPES,
+        ]);
     }
 }

@@ -16,19 +16,6 @@ class TruckRequest extends FormRequest
     {
         $rules = Truck::VALIDATION_RULES;
 
-        if ($this->getMethod() == 'POST') { // store
-            $rules +=  ['b_nos' => [
-                'min:5',
-                'max:45',
-                'unique:Modules\Classifiers\Entities\Bank',
-            ]];
-        } else { //update
-            $rules +=  ['b_nos' => [
-                'min:5',
-                'max:45',
-            ]];
-        }
-
         return $rules;
     }
 }
