@@ -247,6 +247,19 @@ return [
             'url'  => 'reports',
             'icon' => 'fas fa-fw fa-file-contract',
         ],
+        [
+            'header' => 'Uzstādījumi'
+        ],
+        [
+            'text' => 'Telescope',
+            'url'  => 'telescope',
+            'icon' => 'fas fa-binoculars',
+        ],
+        [
+            'text' => 'Audit',
+            'url'  => 'audit',
+            'icon' => 'fas fa-fw fa-user-cog',
+        ],
     ],
 
     /*

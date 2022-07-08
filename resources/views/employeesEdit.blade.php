@@ -86,7 +86,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="staticEmail" class="col-sm-3 col-form-label">Vadīšanas apliecibas datums</label>
+                    <label for="staticEmail" class="col-sm-3 col-form-label">Vadīšanas apliecības datums</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control validate-input datepicker"
                             name="empl_driver_license_date" value="{{ $employee->empl_driver_license_date }}">
@@ -94,7 +94,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="staticEmail" class="col-sm-3 col-form-label">Medicīnas izziņas datums</label>
+                    <label for="staticEmail" class="col-sm-3 col-form-label">Medicīniskās izziņas datums</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control validate-input datepicker"
                             name="empl_health_date" value="{{ $employee->empl_health_date }}">

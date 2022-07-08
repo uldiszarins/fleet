@@ -57,7 +57,8 @@
                             <div class="col-sm-10">
                                 <select class="form-control" name="truck_type">
                                     @foreach($truckTypes as $key => $truckType)
-                                    <option @if($key == $truck->truck_type) selected @endif value="{{ $key }}">{{ $truckType }}</option>
+                                    <option @if($key == old('truck_type', $truck->truck_type)) selected @endif 
+                                        value="{{ $key }}">{{ $truckType }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -65,7 +66,8 @@
                         <div class="form-group row">
                             <label for="staticEmail" class="col-sm-2 col-form-label">Numurs</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control validate-input" value="{{ $truck->truck_number }}"
+                                <input type="text" class="form-control validate-input"
+                                    value="{{ old('truck_number', $truck->truck_number) }}"
                                     name="truck_number" required minlength="3" maxlength="10">
                                 <div id="truck_number_feedback" class="invalid-feedback"></div>
                             </div>
@@ -73,7 +75,8 @@
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-2 col-form-label">Marka</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control validate-input" value="{{ $truck->truck_make }}"
+                                <input type="text" class="form-control validate-input" 
+                                    value="{{ old('truck_make', $truck->truck_make) }}"
                                     name="truck_make" required minlength="3" maxlength="100">
                                 <div id="truck_make_feedback" class="invalid-feedback"></div>
                             </div>
@@ -82,7 +85,7 @@
                             <label for="inputPassword" class="col-sm-2 col-form-label">Modelis</label>
                             <div class="col-sm-10">
                                 <input type="text" name="truck_model" class="form-control validate-input" 
-                                    maxlength="100" value="{{ $truck->truck_model }}">
+                                    maxlength="100" value="{{ old('truck_model', $truck->truck_model) }}">
                                 <div id="truck_model_feedback" class="invalid-feedback"></div>
                             </div>
                         </div>
@@ -90,7 +93,8 @@
                             <label for="inputPassword" class="col-sm-2 col-form-label">Gads</label>
                             <div class="col-sm-10">
                                 <input type="text" name="truck_year" pattern="\d*" class="form-control validate-input" 
-                                    value="{{ $truck->truck_year }}" required minlength="4" maxlength="4">
+                                    value="{{ old('truck_year', $truck->truck_year) }}" required minlength="4" 
+                                    maxlength="4">
                                 <div id="truck_model_feedback" class="invalid-feedback"></div>
                             </div>
                         </div>
@@ -98,7 +102,7 @@
                             <label for="inputPassword" class="col-sm-2 col-form-label">Vin numurs</label>
                             <div class="col-sm-10">
                                 <input type="text" name="truck_vin_number" class="form-control"
-                                    maxlength="100" value="{{ $truck->truck_vin_number }}">
+                                    maxlength="100" value="{{ old('truck_vin_number', $truck->truck_vin_number) }}">
                             </div>
                         </div>
                         <h4>Atgādinājumi</h4>
@@ -107,18 +111,19 @@
                             <div class="col-sm-5">
                                 <input type="text" class="form-control datepicker" 
                                     name="truck_technical_inspection_date" 
-                                    value="{{ $truck->truck_technical_inspection_date }}">
+                                    value="{{ old('truck_technical_inspection_date', $truck->truck_technical_inspection_date) }}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-2 col-form-label">Vinjete</label>
                             <div class="col-sm-5">
                                 <input type="text" class="form-control datepicker" name="truck_vignette_date"
-                                    value="{{ $truck->truck_vignette_date }}">
+                                    value="{{ old('truck_vignette_date', $truck->truck_vignette_date) }}">
                             </div>
                             <div class="col-sm-5">
                                 <input type="text" class="form-control" name="truck_vignette_number" 
-                                    value="{{ $truck->truck_vignette_number }}" maxlength="100">
+                                    value="{{ old('truck_vignette_number', $truck->truck_vignette_number) }}" 
+                                    maxlength="100">
                                 <div id="truck_vignette_number_feedback" class="invalid-feedback"></div>
                             </div>
                         </div>
@@ -126,22 +131,22 @@
                             <label for="inputPassword" class="col-sm-2 col-form-label">Octa</label>
                             <div class="col-sm-5">
                                 <input type="text" class="form-control datepicker" name="truck_insurance_date"
-                                    value="{{ $truck->truck_insurance_date }}">
+                                    value="{{ old('truck_insurance_date', $truck->truck_insurance_date) }}">
                             </div>
                             <div class="col-sm-5">
                                 <input type="text" class="form-control" name="truck_insurance_number" maxlength="100"
-                                    value="{{ $truck->truck_insurance_number }}">
+                                    value="{{ old('truck_insurance_number', $truck->truck_insurance_number) }}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-2 col-form-label">Kasko</label>
                             <div class="col-sm-5">
                                 <input type="text" class="form-control datepicker" name="truck_cc_insurance_date"
-                                    value="{{ $truck->truck_cc_insurance_date }}">
+                                    value="{{ old('truck_cc_insurance_date', $truck->truck_cc_insurance_date) }}">
                             </div>
                             <div class="col-sm-5">
                                 <input type="text" class="form-control" name="truck_cc_insurance_number" maxlength="100"
-                                    value="{{ $truck->truck_cc_insurance_number }}">
+                                    value="{{ old('truck_cc_insurance_number', $truck->truck_cc_insurance_number) }}">
                             </div>
                         </div>
                         <h4>Atļaujas</h4>
@@ -149,22 +154,23 @@
                             <label for="inputPassword" class="col-sm-2 col-form-label">Pašpārvadājumu</label>
                             <div class="col-sm-5">
                                 <input type="text" class="form-control datepicker" name="truck_transportation_date"
-                                    value="{{ $truck->truck_transportation_date }}">
+                                    value="{{ old('truck_transportation_date', $truck->truck_transportation_date) }}">
                             </div>
                             <div class="col-sm-5">
                                 <input type="text" class="form-control" name="truck_transportation_number" 
-                                    maxlength="100" value="{{ $truck->truck_transportation_number }}">
+                                    maxlength="100" 
+                                    value="{{ old('truck_transportation_number', $truck->truck_transportation_number) }}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-2 col-form-label">Atkritumu</label>
                             <div class="col-sm-5">
                                 <input type="text" class="form-control datepicker" name="truck_waste_date" 
-                                    value="{{ $truck->truck_waste_date }}">
+                                    value="{{ old('truck_waste_date', $truck->truck_waste_date) }}">
                             </div>
                             <div class="col-sm-5">
                                 <input type="text" class="form-control" name="truck_waste_number" maxlength="100"
-                                    value="{{ $truck->truck_waste_number }}">
+                                    value="{{ old('truck_waste_number', $truck->truck_waste_number) }}">
                             </div>
                         </div>
                     </div>
